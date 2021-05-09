@@ -1,0 +1,49 @@
+buildscript{
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")		
+	}
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+jar{
+	baseName = 'gs-consuming-rest'
+	version = '0.1.0'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.5'
+	
+	//compile("org.springframework:spring-web")
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.3'
+
+	implementation group: 'org.openjfx', name: 'javafx-base', version: '17-ea+9'
+
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+	
+	 implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+   testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+   implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+   
+	
+	 runtimeOnly files('C:\\Workspaces\\Shared\\utilities.jar')
+   
+   
+}
+
